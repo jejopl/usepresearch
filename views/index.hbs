@@ -23,7 +23,7 @@
   const copyLink = document.querySelector('#copyLink')
 
   copyLink.addEventListener('mousedown', e => {
-    copyToClipboard(`https://iwptfy/p/${input.value}`)
+    copyToClipboard(`https://${window.location.host}/p/${input.value}`)
   })
 
   form.addEventListener('submit', e => {
