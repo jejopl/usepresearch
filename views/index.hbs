@@ -1,0 +1,46 @@
+<div class="ui inverted vertical center aligned segment">
+  <div class="ui content container">
+    <h1 class="ui inverted header">I will Presearch that for you!</h1>
+    <form class="ui form" id="searchForm">
+      <div class="field">
+        <input id="searchInput" type="text">
+      </div>
+    </form>
+    <div class="ui divider"></div>
+    <a href='#' id="tryLink">
+      <div class="ui huge button orange">Try it out!</div>
+    </a>
+    <a href='#' id="copyLink">
+      <div class="ui huge button secondary">Copy link</div>
+    </a>
+  </div>
+
+</div>
+<script>
+  const form = document.querySelector('#searchForm')
+  const input = document.querySelector('#searchInput')
+  const tryLink = document.querySelector('#tryLink')
+  const copyLink = document.querySelector('#copyLink')
+
+  copyLink.addEventListener('mousedown', e => {
+    copyToClipboard(`https://iwptfy/p/${input.value}`)
+  })
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+  })
+
+  input.addEventListener('keyup', e => {
+    tryLink.href = `/p/${input.value}`
+  })
+
+  function copyToClipboard(text) {
+    const textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    textarea.value = text;
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
+
+</script>
