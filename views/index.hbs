@@ -7,10 +7,10 @@
       </div>
     </form>
     <div class="ui divider"></div>
-    <a href='#' id="tryLink">
+    <a href='/' id="tryLink">
       <div class="ui huge button orange">Try it out!</div>
     </a>
-    <a href='#' id="copyLink">
+    <a href='/' id="copyLink">
       <div class="ui huge button secondary">Copy link</div>
     </a>
   </div>
@@ -21,9 +21,12 @@
   const input = document.querySelector('#searchInput')
   const tryLink = document.querySelector('#tryLink')
   const copyLink = document.querySelector('#copyLink')
+  
 
   copyLink.addEventListener('mousedown', e => {
-    copyToClipboard(`https://${window.location.host}/p/${input.value}`)
+    e.preventDefault()
+    let query = encodeURIComponent(input.value.trim())
+    copyToClipboard(`https://${window.location.host}/p/${query}`)
   })
 
   form.addEventListener('submit', e => {
@@ -31,7 +34,8 @@
   })
 
   input.addEventListener('keyup', e => {
-    tryLink.href = `/p/${input.value}`
+    let query = encodeURIComponent(input.value.trim())
+    tryLink.href = `/p/${query}`
   })
 
   function copyToClipboard(text) {

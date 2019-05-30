@@ -1,0 +1,366 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: grayscale;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+  .browser-container {
+    width:100% !important;
+  }
+  .logo {
+    margin-top: 25% !important;
+    width: auto !important;
+max-width: none !important;
+  }
+  .steps {
+    display: none !important;
+  }
+  .ui {
+    padding-top: 0 !important;
+    height: auto !important;
+  }
+  .search-engine {
+    padding: 20px 10px 100% 10px !important;
+  }
+  .ui.large.input {
+    width: 80% !important;
+  }
+  #stepOnePopup {
+    position: absolute;
+    left: 50%;
+  }
+  #stepThreePopup {
+    margin-left: 42px;
+  }
+  #popupThree {
+    left: 40% !important;
+  }
+  #popupOne {
+    top:80px !important;
+  }
+}
+svg {
+  min-width: 30px;
+  max-width: 50px;
+}
+
+.logo {
+  width: 360px;
+  max-width: 70%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  margin-top: 12%;
+}
+div.logo svg {
+  width: 360px;
+  max-width: 70%;
+}
+
+.ui.inverted.vertical.center.aligned.segment {
+  padding-top: 36px;
+}
+
+.ui.inverted.vertical.segment {
+  height: 100vh;
+  background-color: #2484f2;
+}
+
+.ui.content.container {
+  height: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.ui.content.container h1.header {
+  font-size: 36px;
+}
+
+.ui.content.container p {
+  font-size: 21px;
+  line-height: 1.6;
+  font-weight: 300;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ui.inverted.vertical.segment footer.ui.segment {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: gray;
+}
+
+.ui.inverted.vertical.segment footer.ui.segment a {
+  color: white;
+}
+
+/* The browser window */
+.browser-container {
+  border: 3px solid #f1f1f1;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width:80%;
+  margin: 0 auto;
+}
+
+/* Container for columns and the top "toolbar" */
+.browser-row {
+  padding: 10px;
+  background: #f1f1f1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.browser-column {
+  float: left;
+}
+
+.left {
+  width: 15%;
+  float: left;
+}
+
+.right {
+  width: 10%;
+}
+
+.middle {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.browser-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Three dots */
+.dot {
+  margin-top: 4px;
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Style the input field */
+html
+  body
+  div.ui.inverted.vertical.center.aligned.segment
+  div.browser-container.ui.content
+  div.browser-row
+  div.browser-column.middle
+  input[type="text"] {
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  background-color: white;
+  margin-top: -8px;
+  height: 25px;
+  color: #666;
+  padding: 5px;
+}
+
+/* Three bars (hamburger menu) */
+.bar {
+  width: 17px;
+  height: 3px;
+  background-color: #aaa;
+  margin: 3px 0;
+  display: block;
+}
+.browser-content {
+  background: rgba(57, 79, 245, 0.9);
+}
+
+.search-engine {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 10px 10px 20% 10px;
+}
+.search-engine .provider-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.search-engine .provider-icon input[type="radio"]:checked + label {
+  background: hsla(0, 0%, 100%, 0.4);
+  border-color: #fff;
+}
+.search-engine .provider-icon label.icon-default {
+  min-width: 30px;
+  max-width: 50px;
+}
+.search-engine .provider-icon label {
+  width: 50px;
+  height: 35px;
+}
+.search-engine .provider-icon label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 2px 5px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+}
+.search-engine [data-toggle="tooltip"] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+label.icon-default {
+  width: 146px !important;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  margin: 4px 0 0;
+  margin-top: 1px\9;
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.hidden {
+  display: none !important;
+}
+.search-engine .provider-icon label svg * {
+  fill: #fff;
+}
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.search-engine .provider-icon label i,
+.search-engine .provider-icon label img,
+.search-engine .provider-icon label svg {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#popupThree {
+  right: 100px;
+  left: 97%;
+}
+
+#popupOne {
+  top:180px;
+}
+
+/* Popup container - can be anything you want */
+.popup {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #555 transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.popup .hide {
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+@-webkit-keyframes fadeOut {
+  from {opacity: 1;} 
+  to {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity:0 ;}
+}

@@ -16,6 +16,8 @@
             </div>
         </div>
     </div>
+    
+    
     <div class="browser-container ui content">
         <div class="browser-row">
             <div class="column left">
@@ -33,9 +35,11 @@
                     <span class="bar"></span>
                 </div>
             </div>
+            
         </div>
 
         <div class="browser-content">
+            <div class="popup" id="popupOne"><span class="popuptext" id="stepOnePopup">Visit presearch.org</span></div>
             <div class="logo">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 589.8 96.4"
@@ -97,10 +101,13 @@
             </div>
             <br />
             <br />
-            <div class="ui large icon fluid input" style="width: 40%;
+            
+            <div class="ui large icon fluid input" style="width: 60%;
 margin: 0 auto;">
                 <input id="searchInput" type="text" value="">
                 <i class="search icon"></i>
+                <div class="popup" id="popupThree"><span class="popuptext" id="stepThreePopup">Click search</span></div>
+                <div class="popup"><span class="popuptext" id="stepTwoPopup">Enter your query</span></div>
             </div>
             <ul class="search-engine text-center">
                 <li class="provider-icon text-center">
@@ -223,16 +230,27 @@ margin: 0 auto;">
 
     const searchInput = document.querySelector('#searchInput')
 
+    const stepOnePopup = document.querySelector("#stepOnePopup");
+    const stepTwoPopup = document.querySelector("#stepTwoPopup");
+    const stepThreePopup = document.querySelector("#stepThreePopup");
+    stepOnePopup.classList.toggle("show");
 
     let i = 0
     const browserUrl = document.querySelector('#browserLink')
     const urlText = 'https://presearch.org';
-    const speed = 50;
+    const speed = 70;
     function urlTypeWriter() {
         if (i < urlText.length) {
             browserUrl.value += urlText.charAt(i);
             i++;
             setTimeout(urlTypeWriter, speed);
+        } else {
+            stepOnePopup.classList.toggle("hide");
+            setTimeout(() => {
+                stepOnePopup.style = 'visibility: hidden'
+                stepOneFunction()
+                stepTwoPopup.classList.toggle("show");
+            }, 1000)
         }
         
     }
@@ -246,31 +264,34 @@ margin: 0 auto;">
             searchInput.value += searchText.charAt(j);
             j++;
             setTimeout(searchTypeWriter, speed);
+        } else {
+            stepTwoPopup.classList.toggle("hide");
+            
+            setTimeout(() => {
+                stepTwoPopup.style = 'visibility: hidden'
+                stepTwoFunction()
+                stepThreePopup.classList.toggle("show");
+            }, 1000)
         }
         
     }
 
-    setTimeout(() => {
+    function stepOneFunction() {
         stepOne.classList.add("completed")
         stepOne.classList.remove("active")
         stepTwo.classList.add("active")
         searchTypeWriter()
-    }, 2000)
+    }
 
-    setTimeout(() => {
+    function stepTwoFunction() {
         stepTwo.classList.add("completed")
         stepTwo.classList.remove("active")
         stepThree.classList.add("active")
-    }, 4000)
-    
-    setTimeout(() => {
-        stepThree.classList.add("completed")
-        stepThree.classList.remove("active")
-    }, 5000)
-
-    setTimeout(() => {
-        window.location = `https://presearch.org/extsearch?term={{search}}`
-    }, 5500)
-
+        setTimeout(() => {
+            stepThree.classList.add("completed")
+            stepThree.classList.remove("active")
+            //window.location = `https://presearch.org/extsearch?term={{search}}`
+        }, 2000)
+    }
 
 </script>
