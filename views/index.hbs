@@ -26,6 +26,7 @@
   copyLink.addEventListener('mousedown', e => {
     e.preventDefault()
     let query = encodeURIComponent(input.value.trim())
+    query = query.replace(/%20/g, '+');
     copyToClipboard(`https://${window.location.host}/p/${query}`)
   })
 

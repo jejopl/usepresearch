@@ -257,7 +257,8 @@ margin: 0 auto;">
     urlTypeWriter()
 
      let j = 0
-     const searchText = '{{search}}';
+     let searchText = '{{search}}';
+     searchText = searchText.replace(/\+/g, ' ');
 
      function searchTypeWriter() {
         if (j < searchText.length) {

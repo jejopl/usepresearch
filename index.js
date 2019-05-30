@@ -17,8 +17,9 @@ app.get('/p', (req, res) => {
   });
 
 app.get('/p/:tagId', function(req, res) {
+    let search = req.params.tagId
     res.render('search', {
-        search: req.params.tagId
+        search: search
     })
   });
 
