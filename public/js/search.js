@@ -19,9 +19,9 @@ function urlTypeWriter() {
     i++;
     setTimeout(urlTypeWriter, speed);
   } else {
-    //stepOnePopup.classList.toggle("hide");
+    stepOnePopup.classList.toggle("hide");
     setTimeout(() => {
-      //stepOnePopup.style = 'visibility: hidden'
+      stepOnePopup.style = 'visibility: hidden'
       stepOneFunction();
       stepTwoPopup.classList.toggle("show");
     }, 1000);
@@ -62,6 +62,6 @@ function stepTwoFunction() {
   setTimeout(() => {
     stepThree.classList.add("completed");
     stepThree.classList.remove("active");
-    //window.location = `https://presearch.org/extsearch?term={{search}}`
-  }, 2500);
+    window.location = `https://presearch.org/extsearch?term={{search}}`
+  }, 3000);
 }
