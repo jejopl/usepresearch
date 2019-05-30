@@ -96,7 +96,9 @@ div.logo svg {
   width: 80%;
   margin: 0 auto;
 }
-
+#browserContent {
+  visibility: hidden;
+}
 /* Container for columns and the top "toolbar" */
 .browser-row {
   padding: 10px;

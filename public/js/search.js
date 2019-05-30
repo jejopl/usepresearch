@@ -1,9 +1,8 @@
+const browserContent = document.querySelector("#browserContent");
 const stepOne = document.querySelector("#stepOne");
 const stepTwo = document.querySelector("#stepTwo");
 const stepThree = document.querySelector("#stepThree");
-
 const searchInput = document.querySelector("#searchInput");
-
 const stepOnePopup = document.querySelector("#stepOnePopup");
 const stepTwoPopup = document.querySelector("#stepTwoPopup");
 const stepThreePopup = document.querySelector("#stepThreePopup");
@@ -12,7 +11,7 @@ stepOnePopup.classList.toggle("show");
 let i = 0;
 const browserUrl = document.querySelector("#browserLink");
 const urlText = "https://presearch.org";
-const speed = 70;
+const speed = 100;
 function urlTypeWriter() {
   if (i < urlText.length) {
     browserUrl.value += urlText.charAt(i);
@@ -20,11 +19,17 @@ function urlTypeWriter() {
     setTimeout(urlTypeWriter, speed);
   } else {
     stepOnePopup.classList.toggle("hide");
+
     setTimeout(() => {
-      stepOnePopup.style = 'visibility: hidden'
-      stepOneFunction();
+      stepOnePopup.style = "visibility: hidden";
+    }, 900);
+
+    browserContent.style =
+      "visibility: visible !important; -webkit-animation: fadeIn 1s;animation: fadeIn 1s;";
+    setTimeout(() => {
       stepTwoPopup.classList.toggle("show");
-    }, 1000);
+      stepOneFunction();
+    }, 1500);
   }
 }
 urlTypeWriter();
@@ -38,13 +43,15 @@ function searchTypeWriter() {
     j++;
     setTimeout(searchTypeWriter, speed);
   } else {
-    stepTwoPopup.classList.toggle("hide");
+    setTimeout(() => {
+      stepTwoPopup.classList.toggle("hide");
+      stepThreePopup.classList.toggle("show");
+    }, 1000);
 
     setTimeout(() => {
       stepTwoPopup.style = "visibility: hidden";
       stepTwoFunction();
-      stepThreePopup.classList.toggle("show");
-    }, 1000);
+    }, 1900);
   }
 }
 
