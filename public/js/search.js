@@ -62,6 +62,6 @@ function stepTwoFunction() {
   setTimeout(() => {
     stepThree.classList.add("completed");
     stepThree.classList.remove("active");
-    window.location = `https://presearch.org/extsearch?term={{search}}`
+    window.location = `https://presearch.org/extsearch?term=${searchText}`
   }, 3000);
 }
