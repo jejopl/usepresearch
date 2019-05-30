@@ -20,7 +20,7 @@ max-width: none !important;
   }
   .ui {
     padding-top: 0 !important;
-    height: auto !important;
+    height: 100% !important;
   }
   .search-engine {
     padding: 20px 10px 100% 10px !important;
