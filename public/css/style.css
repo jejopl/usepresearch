@@ -26,7 +26,7 @@ body {
   animation: fadeOut 2s;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   .browser-container {
     width: 100% !important;
     margin-top: -14px !important;
@@ -57,6 +57,27 @@ body {
   }
   #popupOne {
     top: 80px !important;
+  }
+  .wtf {
+    margin-top:20% !important;
+  }
+  .header {
+    margin-bottom: 10% !important;
+    margin-top: 10% !important;
+  }
+  .ui.huge.button {
+    font-size: 1.3rem !important;
+  }
+  .ui.divider {
+    margin-bottom: 5% !important;
+    margin-top: 5% !important;
+  }
+  .ui.form {
+    max-width: 90% !important;
+    margin: 0 auto !important;
+  }
+  h1.header {
+    font-size: 30px !important;
   }
 }
 svg {
@@ -350,6 +371,14 @@ input[type="radio"] {
 .popup .hide {
   -webkit-animation: fadeOut 1s;
   animation: fadeOut 1s;
+}
+.wtf {
+  margin-top:10%;
+}
+
+.wtf a {
+  color: #fff;
+  text-decoration: underline;
 }
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {

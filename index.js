@@ -1,6 +1,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const app = express();
+const port = 3500
 
 // Register Handlebars view engine
 app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
@@ -20,6 +21,6 @@ app.get('/:tagId', function(req, res) {
     })
   });
 
-app.listen(3500, () => {
-  console.log('usepresearch is running → PORT 3500');
+app.listen(port, () => {
+  console.log(`usepresearch is running → PORT ${port}`);
 });
