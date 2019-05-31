@@ -4,7 +4,6 @@ const tryLink = document.querySelector('#tryLink')
 const copyLink = document.querySelector('#copyLink')
 const copyDiv = document.querySelector('#copyDiv')
 
-
 copyLink.addEventListener('mousedown', e => {
   e.preventDefault()
   let query = encodeURIComponent(input.value.trim())
