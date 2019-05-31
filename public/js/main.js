@@ -8,8 +8,9 @@ const copyDiv = document.querySelector('#copyDiv')
 copyLink.addEventListener('mousedown', e => {
   e.preventDefault()
   let query = encodeURIComponent(input.value.trim())
-  query = query.replace(/%20/g, '+');
-  copyToClipboard(`https://${window.location.host}/p/${query}`)
+  query = query.replace(/%20/g, '-');
+  query = query.replace(/\%3F/g, "?");
+  copyToClipboard(`https://${window.location.host}/${query}`)
   copyDiv.innerHTML = 'COPIED!'
   setTimeout(() => {
     copyDiv.innerHTML = 'Copy link'
@@ -22,7 +23,7 @@ form.addEventListener('submit', e => {
 
 input.addEventListener('keyup', e => {
   let query = encodeURIComponent(input.value.trim())
-  tryLink.href = `/p/${query}`
+  tryLink.href = `/${query}`
 })
 
 function copyToClipboard(text) {

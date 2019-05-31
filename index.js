@@ -12,12 +12,9 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/p', (req, res) => {
-    res.render('index');
-  });
-
-app.get('/p/:tagId', function(req, res) {
+app.get('/:tagId', function(req, res) {
     let search = req.params.tagId
+    search = search.replace(/\-/g, " ");
     res.render('search', {
         search: search
     })

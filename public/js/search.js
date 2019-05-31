@@ -1,3 +1,4 @@
+const coverDiv = document.querySelector(".coverDiv");
 const browserContent = document.querySelector("#browserContent");
 const stepOne = document.querySelector("#stepOne");
 const stepTwo = document.querySelector("#stepTwo");
@@ -6,7 +7,15 @@ const searchInput = document.querySelector("#searchInput");
 const stepOnePopup = document.querySelector("#stepOnePopup");
 const stepTwoPopup = document.querySelector("#stepTwoPopup");
 const stepThreePopup = document.querySelector("#stepThreePopup");
-stepOnePopup.classList.toggle("show");
+
+setTimeout(() => {
+  coverDiv.classList.toggle("hide");
+}, 1000);
+setTimeout(() => {
+  coverDiv.style = "visibility: hidden";
+  urlTypeWriter();
+  stepOnePopup.classList.toggle("show");
+}, 1950);
 
 let i = 0;
 const browserUrl = document.querySelector("#browserLink");
@@ -24,18 +33,15 @@ function urlTypeWriter() {
       stepOnePopup.style = "visibility: hidden";
     }, 900);
 
-    browserContent.style =
-      "visibility: visible !important; -webkit-animation: fadeIn 1s;animation: fadeIn 1s;";
+    browserContent.style = "visibility: visible !important; -webkit-animation: fadeIn 1s;animation: fadeIn 1s;";
     setTimeout(() => {
       stepTwoPopup.classList.toggle("show");
       stepOneFunction();
     }, 1500);
   }
 }
-urlTypeWriter();
 
 let j = 0;
-searchText = searchText.replace(/\+/g, " ");
 
 function searchTypeWriter() {
   if (j < searchText.length) {
@@ -70,5 +76,5 @@ function stepTwoFunction() {
     stepThree.classList.add("completed");
     stepThree.classList.remove("active");
     window.location = `https://presearch.org/extsearch?term=${searchText}`
-  }, 3000);
+  }, 2500);
 }
