@@ -113,7 +113,7 @@ div.logo svg {
   border: 3px solid #f1f1f1;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 #browserContent {
@@ -296,7 +296,7 @@ input[type="radio"] {
 }
 
 #popupOne {
-  top: 155px;
+  top: 95px;
 }
 
 /* Popup container - can be anything you want */
