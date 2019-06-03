@@ -4,6 +4,9 @@ const searchInput = document.querySelector("#searchInput");
 const stepOnePopup = document.querySelector("#stepOnePopup");
 const stepTwoPopup = document.querySelector("#stepTwoPopup");
 const stepThreePopup = document.querySelector("#stepThreePopup");
+const stepFourPopup = document.querySelector('#stepFourPopup')
+const icons = document.getElementsByClassName('icon-default')
+icons[0].classList.toggle("providerActive")
 
 setTimeout(() => {
   coverDiv.classList.toggle("hide");
@@ -47,11 +50,13 @@ function searchTypeWriter() {
     setTimeout(() => {
       stepTwoPopup.classList.toggle("hide");
       stepThreePopup.classList.toggle("show");
+      stepFourPopup.classList.toggle("show");
     }, 1000);
-
     setTimeout(() => {
       stepTwoPopup.style = "visibility: hidden";
       stepTwoFunction();
+      icons[0].classList.remove('providerActive')
+      icons[2].classList.toggle('providerActive')
     }, 1900);
   }
 }
@@ -61,6 +66,14 @@ function stepOneFunction() {
 }
 
 function stepTwoFunction() {
+  setTimeout(() => {
+      icons[2].classList.remove('providerActive')
+      icons[1].classList.toggle('providerActive')
+  }, 500)
+  setTimeout(() => {
+    icons[1].classList.remove('providerActive')
+    icons[0].classList.toggle('providerActive')
+}, 1000)
   setTimeout(() => {
     window.location = `https://presearch.org/extsearch?term=${searchText}`
   }, 2500);
